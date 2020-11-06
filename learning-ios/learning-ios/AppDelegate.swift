@@ -13,10 +13,55 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var testNavigationController : UINavigationController?
+    var firstTabNavigationController : UINavigationController!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NSLog("start");
+        
+        // init tabbarcontroller
+//        testNavigationController = UINavigationController()
+//        let testViewController: UIViewController = UIViewController()
+//        // self.testNavigationController!.pushViewController(testViewController, animated: false)
+//
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//
+//        self.window?.backgroundColor = UIColor.red
+//
+//        // self.window!.rootViewController = testNavigationController
+//
+//        self.window?.makeKeyAndVisible()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.red
+        
+        let tabBarCnt = UITabBarController()
+        tabBarCnt.tabBar.tintColor = UIColor.black
+        
+        
+        firstTabNavigationController = UINavigationController.init(rootViewController: UIViewController())
+        let secondTabNavigationControoller = MyTableViewController(nibName: nil, bundle: nil);
+       
+        let thirdTabNavigationController = ViewController(nibName: nil, bundle: nil);
+        thirdTabNavigationController.view.backgroundColor = UIColor.blue;
+        
+        let item1 = UITabBarItem(title: "Home", image: UIImage(named: "ico-home"), tag: 0)
+        let item2 = UITabBarItem(title: "Contest", image:  UIImage(named: "ico-contest"), tag: 1)
+        let item3 = UITabBarItem(title: "Post a Picture", image:  UIImage(named: "ico-photo"), tag: 2)
+        
+        firstTabNavigationController.tabBarItem = item1
+        secondTabNavigationControoller.tabBarItem = item2
+        thirdTabNavigationController.tabBarItem = item3
+        
+        tabBarCnt.viewControllers = [firstTabNavigationController, secondTabNavigationControoller, thirdTabNavigationController ]
+        
+        self.window?.rootViewController = tabBarCnt;
+        
+        self.window?.makeKeyAndVisible();
+        
         return true
     }
 

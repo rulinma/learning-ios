@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         NSLog("start");
         
         // 测试 init
-        // hello()
+        hello()
         
         // tableview
         
