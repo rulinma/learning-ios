@@ -17,7 +17,7 @@ class MyTableViewController : UITableViewController {
         
         // tableview
         
-        super.viewDidLoad()
+        super.viewDidLoad();
    
     }
  
