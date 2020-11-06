@@ -14,14 +14,14 @@ class ViewController: UIViewController {
         NSLog("start");
         
         // 测试 init
-        hello()
+        // hello()
         
         // tableview
         
         let button = UIButton(frame: CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: 40, height: 40))
         button.backgroundColor = .blue
         button.tintColor = .white
-        button.setTitle("nav test", for: .normal)
+        button.setTitle("nav", for: .normal)
         button.addTarget(self, action: #selector(change), for: .touchUpInside)
         view.addSubview(button)
         
