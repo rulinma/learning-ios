@@ -18,10 +18,23 @@ class ViewController: UIViewController {
         
         // tableview
         
+        let button = UIButton(frame: CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: 40, height: 40))
+        button.backgroundColor = .blue
+        button.tintColor = .white
+        button.setTitle("nav test", for: .normal)
+        button.addTarget(self, action: #selector(change), for: .touchUpInside)
+        view.addSubview(button)
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    @objc func change () {
+        let otherView = SecondViewController()
+       // self.present(otherView, animated: true, completion: nil)
+        self.navigationController?.pushViewController(otherView, animated: true)
+    }
+    
     func hello() {
         let p = Person.init(name: "mrl", age: 40);
         NSLog(p.name);

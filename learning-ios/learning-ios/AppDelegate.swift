@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("start");
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let nav1 = UINavigationController()
+        let mainView = ViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
+        nav1.viewControllers = [mainView]
+        self.window!.rootViewController = nav1
+        self.window?.makeKeyAndVisible()
+        
         // init tabbarcontroller
 //        testNavigationController = UINavigationController()
 //        let testViewController: UIViewController = UIViewController()
