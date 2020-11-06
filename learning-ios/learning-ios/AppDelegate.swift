@@ -35,6 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //        self.window?.makeKeyAndVisible()
         
+      
+        
+        return true
+    }
+
+    func tabbar() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.red
         
@@ -44,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         firstTabNavigationController = UINavigationController.init(rootViewController: UIViewController())
         let secondTabNavigationControoller = MyTableViewController(nibName: nil, bundle: nil);
-       
+        
         let thirdTabNavigationController = ViewController(nibName: nil, bundle: nil);
         thirdTabNavigationController.view.backgroundColor = UIColor.blue;
         
@@ -61,10 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarCnt;
         
         self.window?.makeKeyAndVisible();
-        
-        return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
